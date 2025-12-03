@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Heart, Star, Camera, Sparkles, X, Play, Pause, ChevronRight, ChevronLeft, Gift, Wind, Trophy, Check } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -16,17 +16,17 @@ const CONFIG = {
   reasons: [
     { text: "Your smile lights up the entire room! ✨", img: "/curtain.jpg" },
     { text: "You are officially a TEENAGER! 1️⃣3️⃣", img: "/nightterace.JPG" },
-    { text: "You give the absolute best hugs 🤗", img: "/Screenshot 2025-12-03 at 2.01.19 AM.png" },
-    { text: "You have the coolest fashion sense 👗", img: "/Screenshot 2025-12-03 at 1.59.04 AM.png" },
-    { text: "You're smarter than you know 🧠", img: "/IMG_4330.JPG" },
-    { text: "You make boring days fun 🎉", img: "/Screenshot 2025-12-03 at 1.55.51 AM.png" },
+    { text: "You give the absolute best hugs 🤗", img: "/reason3.png" },
+    { text: "You have the coolest fashion sense 👗", img: "/reason4.png" },
+    { text: "You're smarter than you know 🧠", img: "/3.png" },
+    { text: "You make boring days fun 🎉", img: "/reason6.png" },
     { text: "You're kinda kind 🐾", img: "/IMG_4726.JPG" },
-    { text: "Your laugh is contagious 😂", img: "/Screenshot 2025-12-03 at 1.59.51 AM.png" },
+    { text: "Your laugh is contagious 😂", img: "/reason8.png" },
     { text: "You are brave and strong 🦁", img: "/sunset.JPG" },
-    { text: "You are creative and artistic 🎨", img: "/Screenshot 2025-12-03 at 1.53.17 AM.png" },
-    { text: "You're the best sister in the world 👯‍♀️", img: "/e44601fe-244a-422b-8f7b-58bce5057d04.JPG" },
-    { text: "You have amazing taste in music 🎵", img: "/Screenshot 2025-12-03 at 1.54.46 AM.png" },
-    { text: "You are simply YOU, and that's enough! 💖", img: "/Screenshot 2025-12-03 at 1.54.29 AM.png" }
+    { text: "You are creative and artistic 🎨", img: "/11.png" },
+    { text: "You're the best sister in the world 👯‍♀️", img: "/reason12.jpg" },
+    { text: "You have amazing taste in music 🎵", img: "child.JPG" },
+    { text: "You are simply YOU, and that's enough! 💖", img: "/reason13.png" }
   ],
   
   // QUIZ DATA
@@ -38,33 +38,34 @@ const CONFIG = {
 
   // GALLERY IMAGES
   galleryImages: [
-    "/Screenshot 2025-12-03 at 1.56.35 AM.png",
-    "/Screenshot 2025-12-03 at 1.56.50 AM.png",
-    "/Screenshot 2025-12-03 at 1.57.01 AM.png",
-    "/Screenshot 2025-12-03 at 1.57.12 AM.png",
-    "/Screenshot 2025-12-03 at 1.57.21 AM.png",
-    "/Screenshot 2025-12-03 at 1.57.29 AM.png",
-    "/Screenshot 2025-12-03 at 1.58.44 AM.png",
-    "/Screenshot 2025-12-03 at 1.58.54 AM.png",
+    "/1.png",
+    "/2.png",
+    "/IMG_4330.JPG",
+    "/4.png",
+    "/5.png",
+    "/6.png",
+    "/7.png",
+    "/8.png",
+    "/9.png",
+    "/10.png",
+    "/reason10.png",
+    "/12.png",
+    "/13.png",
+    "/14.png",
+    "/15.png",
+    "/16.png",
+    "/17.png",
+    "/18.png",
+    "/19.png",
+    "/20.png",
+    "/21.png",
+    "/22.png",
+    "/23.png",
+    "/24.png",
     "/IMG_0947.JPG",
-    "/Screenshot 2025-12-03 at 1.59.14 AM.png",
-    "/Screenshot 2025-12-03 at 1.59.24 AM.png",
-    "/Screenshot 2025-12-03 at 1.59.33 AM.png",
-    "/Screenshot 2025-12-03 at 1.59.42 AM.png",
     "/IMG_0537.JPG",
-    "/Screenshot 2025-12-03 at 2.00.02 AM.png",
-    "/Screenshot 2025-12-03 at 2.00.12 AM.png",
-    "/Screenshot 2025-12-03 at 2.00.22 AM.png",
-    "/Screenshot 2025-12-03 at 2.00.32 AM.png",
-    "/Screenshot 2025-12-03 at 2.00.41 AM.png",
-    "/Screenshot 2025-12-03 at 2.00.57 AM.png",
-    "/Screenshot 2025-12-03 at 2.01.05 AM.png",
     "/IMG_0562.JPG",
-    "/Screenshot 2025-12-03 at 2.01.27 AM.png",
-    "/Screenshot 2025-12-03 at 2.01.36 AM.png",
-    "/Screenshot 2025-12-03 at 2.01.43 AM.png",
     "/213.JPG",
-    "/Screenshot 2025-12-03 at 1.55.15 AM.png",
     "/yacht.JPG",
     "/IMG_0046.JPG",
     "/award.JPG"
